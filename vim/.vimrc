@@ -1,3 +1,11 @@
+" plugins
+call plug#begin('~/.vim/plugged')
+
+" init plugin system
+call plug#end()
+
+
+
 " Vim settings rather than Vi
 set nocompatible
 set history=999
@@ -50,3 +58,4 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
