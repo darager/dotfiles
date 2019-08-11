@@ -4,6 +4,15 @@ source ~/.vim/autoload/pathogen.vim "location of my pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
+let NERDTreeShowHidden=1
+
+" open nerdtree when no file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" bind toggle nerdtree to <C-n>
+map <C-n> :NERDTreeToggle<CR>
+
 filetype plugin indent on
 
 set history=999
