@@ -1,13 +1,11 @@
-" plugins
-call plug#begin('~/.vim/plugged')
+" enable pathogen package manager
+set nocp
+source ~/.vim/autoload/pathogen.vim "location of my pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
 
-" init plugin system
-call plug#end()
+filetype plugin indent on
 
-
-
-" Vim settings rather than Vi
-set nocompatible
 set history=999
 
 " make tabwidth smaller
