@@ -34,7 +34,7 @@ set relativenumber
 syntax enable
 
 " set colorsheme
-colorscheme distinguished
+colorscheme molokai
 
 " disable arrow keys in normal mode
 map <up> <nop>
