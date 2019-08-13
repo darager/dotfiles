@@ -12,6 +12,8 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 sudo apt-get install exuberant-ctags
 # NERDTree
 git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+# NERDCommenter
+git clone https://github.com/scrooloose/nerdcommenter.git ~/.vim/bundle/nerdcommenter
 # easytags
 git clone https://github.com/xolox/vim-easytags.git ~/.vim/bundle/vim-easytags
 # vim-misc
