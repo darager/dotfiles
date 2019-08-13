@@ -3,18 +3,32 @@ set nocp
 source ~/.vim/autoload/pathogen.vim "location of my pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
-
-let NERDTreeShowHidden=1
+filetype plugin indent on
 
 " open nerdtree when no file is specified
+let NERDTreeShowHidden=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " bind toggle nerdtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
 
-filetype plugin indent on
+" configure syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
+let g:syntastic_python_pylint_args = '-E'
+"" to show it accepts a string of args, also:
+let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc -E'
+
+"##############################################################################
 set history=999
 
 " make tabwidth smaller
@@ -35,6 +49,10 @@ syntax enable
 
 " set colorsheme
 colorscheme molokai
+
+" enable faster performance
+set lazyredraw
+set ttyfast
 
 " disable arrow keys in normal mode
 map <up> <nop>
@@ -65,4 +83,3 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-
