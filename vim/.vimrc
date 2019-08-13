@@ -28,7 +28,12 @@ let g:syntastic_python_pylint_args = '-E'
 "" to show it accepts a string of args, also:
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc -E'
 
+" run python in debug mode
+nnoremap <Leader>t :python3 %<CR>
+
 "##############################################################################
+let mapleader=','
+
 set history=999
 
 " make tabwidth smaller
@@ -83,3 +88,8 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+
+" disable swap and backup files
+set nobackup
+set nowritebackup
+set noswapfile
