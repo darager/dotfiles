@@ -1,33 +1,34 @@
-" enable pathogen package manager
+" disable backwards compatability
 set nocp
+" enable pathogen package manager
 source ~/.vim/autoload/pathogen.vim "location of my pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 filetype plugin indent on
 
+" NERDTree
 " open nerdtree when no file is specified
 let NERDTreeShowHidden=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
 " bind toggle nerdtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
 
+" Synstastic
 " configure syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
 let g:syntastic_python_pylint_args = '-E'
 "" to show it accepts a string of args, also:
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc -E'
 
+" vim-pymode
 " run python in debug mode
 nnoremap <Leader>t :python3 %<CR>
 
