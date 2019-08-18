@@ -35,6 +35,11 @@ nnoremap <Leader>t :python3 %<CR>
 "##############################################################################
 let mapleader=','
 
+" remove the annoying green background that pops up once in a while
+if &term =~ '256color'
+	set t_ut=
+endif
+
 set history=999
 
 " make tabwidth smaller
