@@ -28,12 +28,12 @@ let g:syntastic_python_pylint_args = '-E'
 "" to show it accepts a string of args, also:
 let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc -E'
 
-" vim-pymode
-" run python in debug mode
-nnoremap <Leader>t :python3 %<CR>
 
 "##############################################################################
 let mapleader=','
+
+" shortcut for more convenient window management
+nnoremap <Leader>w <C-w>
 
 " remove the annoying green background that pops up once in a while
 if &term =~ '256color'
@@ -92,7 +92,7 @@ set noerrorbells
 " Search
 set ignorecase
 set smartcase
-set hlsearch
+set nohlsearch
 set incsearch
 
 " disable swap and backup files
