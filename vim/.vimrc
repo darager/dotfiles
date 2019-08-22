@@ -53,8 +53,9 @@ set laststatus=2
 " Height of the command bar
 set cmdheight=1
 
-" relative numbers
-set relativenumber
+" Enable line numbers
+set number
+
 " Enable syntax highlihting
 syntax enable
 
