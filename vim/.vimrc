@@ -1,36 +1,75 @@
 " disable backwards compatability
 set nocp
-" enable pathogen package manager
-source ~/.vim/autoload/pathogen.vim "location of my pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on
 
-" NERDTree
+" download all the vim plugins using vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'davidhalter/jedi-vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'xolox/vim-misc' "required for easytags
+Plug 'xolox/vim-easytags'
+Plug 'majutsushi/tagbar'
+call plug#end()
+
+
+" scrooloose/nerdtree
 " open nerdtree when no file is specified
 let NERDTreeShowHidden=1
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " bind toggle nerdtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
 
-" Synstastic
-" configure syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']  "" or ['flake8', 'pylint'], etc
-let g:syntastic_python_pylint_args = '-E'
-"" to show it accepts a string of args, also:
-let g:syntastic_python_pylint_args = '--rcfile=~/.pylintrc -E'
+
+" scrooloose/nercommenter
+" add spaces between the comment character and the line
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
 
 
-"##############################################################################
+" itchyny/lightline.vim
+let g:lightline = {
+  \ 	'colorscheme': 'one',
+  \     'active': {
+  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+  \     }
+  \ }
+
+
+" airblade/gitgutter
+" don't remap anything automatically
+let g:gitgutter_map_keys = 0
+let g:gitgutter_override_sign_column_highlight = 0
+nnoremap <Leader>s :GitGutterToggle<CR>
+
+
+" majutsushi/tagbar
+nmap <F8> :TagbarToggle<CR>
+
+
+" vim-airline/vim-airline and vim-airline-themes
+let g:AirlineTheme = 'molokai'
+let g:airline_powerline_fonts = 1
+
+
+filetype plugin on
+
+"-----------------------------------------------------------------------------"
+" normal settings from here on now
 let mapleader=','
+
+set t_Co=256
 
 " shortcut for more convenient window management
 nnoremap <Leader>w <C-w>
