@@ -3,22 +3,25 @@ set nocp
 
 " download all the vim plugins using vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-Plug 'davidhalter/jedi-vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'xolox/vim-misc' "required for easytags
-Plug 'xolox/vim-easytags'
-Plug 'majutsushi/tagbar'
-Plug 'kien/ctrlp.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'alvan/vim-closetag'
-Plug 'vim-vdebug/vdebug'
-Plug 'vim-syntastic/syntastic'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+
+  Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-repeat'
+  Plug 'alvan/vim-closetag'
+
+  Plug 'vim-vdebug/vdebug'
+  Plug 'davidhalter/jedi-vim'
+  Plug 'vim-syntastic/syntastic'
+  Plug 'xolox/vim-easytags'
+  Plug 'xolox/vim-misc' "required for easytags
+
+  Plug 'kien/ctrlp.vim'
+  Plug 'majutsushi/tagbar'
+  Plug 'Yggdroot/indentLine'
+  Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
@@ -105,6 +108,9 @@ let mapleader=','
 " set colorscheme
 colorscheme molokai
 set t_Co=256
+
+" always show 2 lines above and below the cursor
+set scrolloff=2
 
 " shortcut for more convenient window management
 nnoremap <Leader>w <C-w>
