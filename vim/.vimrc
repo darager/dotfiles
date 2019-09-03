@@ -116,8 +116,12 @@ endif
 
 set history=999
 
-" make tabwidth smaller
-set tabstop=4
+set number
+set smartindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set clipboard=unnamed
 
 set nomodeline
 
