@@ -14,7 +14,13 @@ Plug 'tpope/vim-repeat'
 Plug 'xolox/vim-misc' "required for easytags
 Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
+Plug 'kien/ctrlp.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'alvan/vim-closetag'
+Plug 'vim-vdebug/vdebug'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
+
 
 
 " scrooloose/nerdtree
@@ -63,12 +69,41 @@ let g:AirlineTheme = 'molokai'
 let g:airline_powerline_fonts = 1
 
 
+" kien/ctrlp.vim
+nnoremap <Leader>f :CtrlP<CR>
+
+
+" Yggdroot/indentLine
+let g:indentLine_char = '┊'
+
+" alvan/vim-closetag
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+let g:closetag_filetypes = 'html,xhtml,phtml'
+let g:closetag_shortcut = '>'
+
+
+" vim-syntastic/syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_python_pylint_args = '-E'
+
+
 filetype plugin on
 
 "-----------------------------------------------------------------------------"
 " normal settings from here on now
 let mapleader=','
 
+" set colorscheme
+colorscheme molokai
 set t_Co=256
 
 " shortcut for more convenient window management
@@ -97,9 +132,6 @@ set number
 
 " Enable syntax highlihting
 syntax enable
-
-" set colorsheme
-colorscheme molokai
 
 " enable faster performance
 set lazyredraw
