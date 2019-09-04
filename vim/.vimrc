@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'alvan/vim-closetag'
 
   Plug 'vim-vdebug/vdebug'
-  Plug 'davidhalter/jedi-vim'
+  Plug 'ycm-core/YouCompleteMe'
   Plug 'vim-syntastic/syntastic'
   Plug 'xolox/vim-easytags'
   Plug 'xolox/vim-misc' "required for easytags
@@ -24,14 +24,15 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-
+filetype off
+filetype plugin on
+filetype plugin indent on
 
 " scrooloose/nerdtree
 " open nerdtree when no file is specified
 let NERDTreeShowHidden=1
 " bind toggle nerdtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
-
 
 " scrooloose/nercommenter
 " add spaces between the comment character and the line
@@ -45,7 +46,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
-
 " itchyny/lightline.vim
 let g:lightline = {
   \ 	'colorscheme': 'one',
@@ -55,26 +55,21 @@ let g:lightline = {
   \     }
   \ }
 
-
 " airblade/gitgutter
 " don't remap anything automatically
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
 nnoremap <Leader>s :GitGutterToggle<CR>
 
-
 " majutsushi/tagbar
 nmap <F8> :TagbarToggle<CR>
-
 
 " vim-airline/vim-airline and vim-airline-themes
 let g:AirlineTheme = 'molokai'
 let g:airline_powerline_fonts = 1
 
-
 " kien/ctrlp.vim
 nnoremap <Leader>f :CtrlP<CR>
-
 
 " Yggdroot/indentLine
 let g:indentLine_char = '┊'
@@ -84,22 +79,16 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_shortcut = '>'
 
-
 " vim-syntastic/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = '-E'
-
-
-filetype plugin on
 
 "-----------------------------------------------------------------------------"
 " normal settings from here on now
@@ -140,25 +129,6 @@ set cmdheight=1
 " Enable line numbers
 set number
 
-" Enable syntax highlihting
-syntax enable
-
-" enable faster performance
-set lazyredraw
-set ttyfast
-
-" disable arrow keys in normal mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
-" disable arrow keys in insert mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
 " Display the cursorline
 set cursorline
 
@@ -181,3 +151,16 @@ set incsearch
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Enable syntax highlihting
+syntax enable
+
+" enable faster performance
+set lazyredraw
+set ttyfast
+
+" disable arrow keys in normal mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
