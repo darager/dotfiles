@@ -59,6 +59,7 @@ let g:lightline = {
 " don't remap anything automatically
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_diff_args = '-w' "ignore whitespace when diffing
 nnoremap <Leader>s :GitGutterToggle<CR>
 
 " majutsushi/tagbar
@@ -89,6 +90,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_python_pylint_args = '-E'
+
+" ycm-core/YouCompleteMe
+nnoremap <Leader>g :YcmCompleter GoTo
 
 "-----------------------------------------------------------------------------"
 " normal settings from here on now
