@@ -51,7 +51,7 @@ let g:lightline = {
   \ 	'colorscheme': 'one',
   \     'active': {
   \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+  \         'right': [['lineinfo'], ['fileformat', 'fileencoding']]
   \     }
   \ }
 
@@ -93,6 +93,21 @@ let g:syntastic_python_pylint_args = '-E'
 
 " ycm-core/YouCompleteMe
 nnoremap <Leader>g :YcmCompleter GoTo
+
+" vim-vdebug/vdebug
+let g:vdebug_keymap = {
+\    "run" : "<F5>",
+\    "run_to_cursor" : "<F9>",
+\    "step_over" : "<F2>",
+\    "step_into" : "<F3>",
+\    "step_out" : "<F4>",
+\    "close" : "<F6>",
+\    "detach" : "<F7>",
+\    "set_breakpoint" : "<F10>",
+\    "get_context" : "<F11>",
+\    "eval_under_cursor" : "<F12>",
+\    "eval_visual" : "<Leader>e",
+\}
 
 "-----------------------------------------------------------------------------"
 " normal settings from here on now

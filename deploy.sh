@@ -21,4 +21,13 @@ cd YouCompleteMe
 git submodule update --init --recursive
 ./install.py --all
 
-echo "In order to install the plugins open vim and run $(tput bold)$(tput setab 7)$(tput setaf 0):PlugInstall"
+# install komodo-remote-debugging-package for python remote debugging
+cd ~/.vim
+mkdir vimhelpers && cd vimhelpers
+curl http://downloads.activestate.com/Komodo/releases/11.1.0/remotedebugging/Komodo-PythonRemoteDebugging-11.1.0-91033-linux-x86.tar.gz --output komodo-remote.tar.gz
+tar -xzvf komodo-remote.tar.gz
+rm komodo-remote.tar.gz
+# in order for komodo to work the dbgp folder has to be in the folder that the binary is in
+mv ~/.vim/vimhelpers/Komodo-PythonRemoteDebugging-11.1.0-91033-linux-x86/pythonlib/dbgp ~/.vim/vimhelpers/Komodo-PythonRemoteDebugging-11.1.0-91033-linux-x86/
+
+echo "In order to install the plugins open vim and run $(tput bold)$(tput setaf 0):PlugInstall"
