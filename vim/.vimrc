@@ -69,9 +69,6 @@ nmap <F8> :TagbarToggle<CR>
 let g:AirlineTheme = 'molokai'
 let g:airline_powerline_fonts = 1
 
-" kien/ctrlp.vim
-nnoremap <Leader>f :CtrlP<CR>
-
 " Yggdroot/indentLine
 let g:indentLine_char = '┊'
 
@@ -93,7 +90,7 @@ let g:syntastic_python_checkers = ['python3']
 let g:syntastic_python_pylint_args = '-E'
 
 " ycm-core/YouCompleteMe
-nnoremap <Leader>g :YcmCompleter GoTo
+nnoremap <Leader>g :YcmCompleter GoTo<CR>
 
 " vim-vdebug/vdebug
 let g:vdebug_keymap = {
