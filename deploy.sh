@@ -30,4 +30,5 @@ rm komodo-remote.tar.gz
 # in order for komodo to work the dbgp folder has to be in the folder that the binary is in
 mv ~/.vim/vimhelpers/Komodo-PythonRemoteDebugging-11.1.0-91033-linux-x86/python3lib/dbgp ~/.vim/vimhelpers/Komodo-PythonRemoteDebugging-11.1.0-91033-linux-x86/
 
+clear
 echo "In order to install the plugins open vim and run $(tput bold)$(tput setaf 0):PlugInstall"
