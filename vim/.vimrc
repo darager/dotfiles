@@ -12,14 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'alvan/vim-closetag'
 
-  Plug 'vim-vdebug/vdebug'
-  Plug 'ycm-core/YouCompleteMe'
-  Plug 'vim-syntastic/syntastic'
-  Plug 'xolox/vim-easytags'
-  Plug 'xolox/vim-misc' "required for easytags
-
   Plug 'kien/ctrlp.vim'
-  Plug 'majutsushi/tagbar'
   Plug 'Yggdroot/indentLine'
   Plug 'airblade/vim-gitgutter'
 call plug#end()
@@ -62,9 +55,6 @@ let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_diff_args = '-w' "ignore whitespace when diffing
 nnoremap <Leader>s :GitGutterToggle<CR>
 
-" majutsushi/tagbar
-nmap <F8> :TagbarToggle<CR>
-
 " vim-airline/vim-airline and vim-airline-themes
 let g:AirlineTheme = 'molokai'
 let g:airline_powerline_fonts = 1
@@ -77,38 +67,10 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_shortcut = '>'
 
-" vim-syntastic/syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_python_checkers = ['python3']
-let g:syntastic_python_pylint_args = '-E'
-
-" ycm-core/YouCompleteMe
-nnoremap <Leader>g :YcmCompleter GoTo<CR>
-
-" vim-vdebug/vdebug
-let g:vdebug_keymap = {
-\    "run" : "<F5>",
-\    "run_to_cursor" : "<F9>",
-\    "step_over" : "<F2>",
-\    "step_into" : "<F3>",
-\    "step_out" : "<F4>",
-\    "close" : "<F6>",
-\    "detach" : "<F7>",
-\    "set_breakpoint" : "<F10>",
-\    "get_context" : "<F11>",
-\    "eval_under_cursor" : "<F12>",
-\    "eval_visual" : "<Leader>e",
-\}
-
 "-----------------------------------------------------------------------------"
-" normal settings from here on now
+
+set relativenumber
+
 let mapleader=','
 
 " set colorscheme
@@ -175,9 +137,3 @@ syntax enable
 " enable faster performance
 set lazyredraw
 set ttyfast
-
-" disable arrow keys in normal mode
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
