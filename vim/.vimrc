@@ -90,7 +90,7 @@ endif
 
 set history=999
 
-set number
+set relativenumber
 set smartindent
 set tabstop=2
 set shiftwidth=2
