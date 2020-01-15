@@ -120,3 +120,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# vi mode in bash
+set editing-mode vi
+set -o vi
+$ bind -P
