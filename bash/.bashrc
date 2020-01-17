@@ -125,3 +125,5 @@ fi
 set editing-mode vi
 set -o vi
 $ bind -P
+
+export DOCKER_HOST=tcp://localhost:2375
