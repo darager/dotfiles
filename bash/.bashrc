@@ -125,5 +125,3 @@ fi
 set editing-mode vi
 set -o vi
 $ bind -P
-bind '"_":^'
-bind '"0":^'
