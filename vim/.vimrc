@@ -122,9 +122,9 @@ set noerrorbells
 
 " Search
 set ignorecase
-set smartcase
-set nohlsearch
 set incsearch
+set nohlsearch
+set smartcase
 
 " disable swap and backup files
 set nobackup
@@ -137,3 +137,15 @@ syntax enable
 " enable faster performance
 set lazyredraw
 set ttyfast
+
+" make sure there are always 2 lines above and below the cursor
+set scrolloff=2
+
+" indent lines and reselect visual group
+vnoremap > >gv
+vnoremap < <gv
+
+" faster semicolon
+vnoremap ; mkA;<Esc>'k
+
+" swap 
