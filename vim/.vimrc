@@ -151,5 +151,5 @@ vnoremap ; mkA;<Esc>'k
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s+$//e
 
-" copy to windows buffer
+" copy to windows clipboard
 vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
