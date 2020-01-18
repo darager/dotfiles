@@ -30,6 +30,7 @@ alias grep='grep --color=auto'
 alias g='git'
 alias mkdir='mkdir -pv'
 alias cl='clear'
+=======
 
 # ls aliases
 alias ll='ls -alF'
