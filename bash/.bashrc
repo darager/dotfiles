@@ -122,6 +122,7 @@ if ! shopt -oq posix; then
 fi
 
 # vi mode in bash
+export EDITOR=vim
 set editing-mode vi
 set -o vi
 $ bind -P
