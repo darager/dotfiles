@@ -148,4 +148,8 @@ vnoremap < <gv
 " faster semicolon
 vnoremap ; mkA;<Esc>'k
 
-" swap 
+" remove trailing whitespace on save
+autocmd BufWritePre * %s/\s+$//e
+
+" copy to windows buffer
+vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
