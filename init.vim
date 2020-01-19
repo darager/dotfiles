@@ -7,16 +7,17 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
-  Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-repeat'
   Plug 'alvan/vim-closetag'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'scrooloose/nerdtree'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
 
-  Plug 'kien/ctrlp.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'airblade/vim-gitgutter'
+  Plug 'kien/ctrlp.vim'
 call plug#end()
 
 filetype off
@@ -69,6 +70,14 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_shortcut = '>'
 
+" kien/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
 "-----------------------------------------------------------------------------"
 
 set relativenumber
@@ -86,8 +95,8 @@ set scrolloff=2
 nnoremap <Leader>w <C-w>
 
 " remove the annoying green background that pops up once in a while
-if &term =~ '256color'
-	set t_ut=
+if (&term =~ '^xterm' && &t_Co == 256)
+  set t_ut= | set ttyscroll=1
 endif
 
 set history=999

@@ -1,7 +1,3 @@
-rm ~/.bashrc
-rm ~/.tmux.conf
-rm -rf ~/.config/nvim
-
 ln ./.bashrc ~/
 ln ./.tmux.conf ~/
 mkdir ~/.config/nvim
