@@ -1,10 +1,14 @@
 ln ./.bashrc ~/
 ln ./.tmux.conf ~/
-ln ./.vimrc ~/
+mkdir ~/.config/nvim
+ln ./init.vim ~/.config/nvim
 
 # install plug.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 		    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install neovim
+sudo apt-get install neovim
 
 # install custom font for powerline
 sudo apt-get install fonts-powerline

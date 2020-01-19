@@ -38,3 +38,6 @@ alias l='ls -CF'
 
 # set docker for windows deamon address
 export DOCKER_HOST=tcp://localhost:2375
+
+# use neovim instead of vim
+alias vim='nvim'
