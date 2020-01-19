@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-repeat'
   Plug 'alvan/vim-closetag'
+  Plug 'christoomey/vim-tmux-navigator'
 
   Plug 'kien/ctrlp.vim'
   Plug 'Yggdroot/indentLine'
