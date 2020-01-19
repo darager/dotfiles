@@ -1,7 +1,6 @@
-cp bash/.bashrc ~/
-cp tmux/.tmux.conf ~/
-cp -r vim/.vim ~/
-cp vim/.vimrc ~/
+ln ./.bashrc ~/
+ln ./.tmux.conf ~/
+ln ./.vimrc ~/
 
 # install plug.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

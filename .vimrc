@@ -3,6 +3,7 @@ set nocp
 
 " download all the vim plugins using vim-plug
 call plug#begin('~/.vim/plugged')
+  Plug 'tomasr/molokai'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
