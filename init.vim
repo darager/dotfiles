@@ -7,17 +7,19 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
-  Plug 'alvan/vim-closetag'
-  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'vim-syntastic/syntastic'
+
+  Plug 'Yggdroot/indentLine'
   Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdcommenter'
-  Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
 
-  Plug 'Yggdroot/indentLine'
   Plug 'airblade/vim-gitgutter'
+  Plug 'christoomey/vim-tmux-navigator'
   Plug 'kien/ctrlp.vim'
+  Plug 'octref/RootIgnore'
+  Plug 'scrooloose/nerdtree'
 call plug#end()
 
 filetype off
@@ -77,6 +79,17 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+
+" vim-syntastic/syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "-----------------------------------------------------------------------------"
 
