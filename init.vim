@@ -115,7 +115,7 @@ vnoremap < <gv
 
 nnoremap <Leader>w <C-w>
 
-" faster semicolon" faster semicolon
+" faster semicolon
 nnoremap ; mkA;<Esc>'k 
 
 " copy to windows clipboard
