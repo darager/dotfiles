@@ -1,7 +1,5 @@
-" disable backwards compatability
-set nocp
+set nocp " disable backwards compatability
 
-" download all the vim plugins using vim-plug
 call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
   Plug 'vim-airline/vim-airline'
@@ -26,53 +24,27 @@ filetype off
 filetype plugin on
 filetype plugin indent on
 
-" scrooloose/nerdtree
-" open nerdtree when no file is specified
-let NERDTreeShowHidden=1
-" bind toggle nerdtree to <C-n>
 map <C-n> :NERDTreeToggle<CR>
-
-" scrooloose/nercommenter
-" add spaces between the comment character and the line
+let NERDTreeShowHidden=1
 let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-" Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
-" Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
 let g:NERDToggleCheckAllLines = 1
 
-" itchyny/lightline.vim
-let g:lightline = {
-  \ 	'colorscheme': 'one',
-  \     'active': {
-  \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
-  \         'right': [['lineinfo'], ['fileformat', 'fileencoding']]
-  \     }
-  \ }
-
-" airblade/gitgutter
-" don't remap anything automatically
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_diff_args = '-w' "ignore whitespace when diffing
-nnoremap <Leader>s :GitGutterToggle<CR>
+let g:gitgutter_diff_args = '-w' " ignore whitespace when diffing
 
-" vim-airline/vim-airline and vim-airline-themes
 let g:AirlineTheme = 'molokai'
 let g:airline_powerline_fonts = 1
 
-" Yggdroot/indentLine
 let g:indentLine_char = '┊'
 
-" alvan/vim-closetag
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_shortcut = '>'
 
-" kien/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
@@ -80,12 +52,9 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-
-" vim-syntastic/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -93,56 +62,31 @@ let g:syntastic_check_on_wq = 0
 
 "-----------------------------------------------------------------------------"
 
-set relativenumber
-
 let mapleader=','
 
-" set colorscheme
 colorscheme molokai
 set t_Co=256
 
-" always show 2 lines above and below the cursor
-set scrolloff=2
-
-" shortcut for more convenient window management
-nnoremap <Leader>w <C-w>
-
-" remove the annoying green background that pops up once in a while
-if (&term =~ '^xterm' && &t_Co == 256)
-  set t_ut= | set ttyscroll=1
-endif
-
-set history=999
-
 set relativenumber
-set smartindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set clipboard=unnamed
-
-set nomodeline
-
-" Always display the status bar
-set laststatus=2
-
-" Height of the command bar
-set cmdheight=1
-
-" Enable line numbers
 set number
-
-" Display the cursorline
-set cursorline
-
-" highlight 80th column
 set colorcolumn=80
 
-" show matching brackets
-set showmatch
+set expandtab
+set shiftwidth=2
+set smartindent
+set tabstop=2
 
-" turn off error sounds
+set history=999
+set clipboard=unnamedplus " remove plus is required
+set nomodeline
+
+set laststatus=2
+set cmdheight=1
+set cursorline
+
 set noerrorbells
+
+set showmatch
 
 " Search
 set ignorecase
@@ -155,25 +99,24 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-" Enable syntax highlihting
 syntax enable
 
-" enable faster performance
 set lazyredraw
 set ttyfast
 
-" make sure there are always 2 lines above and below the cursor
 set scrolloff=2
+
+" remove trailing whitespace on save
+autocmd BufWritePre * %s/\s+$//e
 
 " indent lines and reselect visual group
 vnoremap > >gv
 vnoremap < <gv
 
-" faster semicolon
-vnoremap ; mkA;<Esc>'k
+nnoremap <Leader>w <C-w>
 
-" remove trailing whitespace on save
-autocmd BufWritePre * %s/\s+$//e
+" faster semicolon" faster semicolon
+nnoremap ; mkA;<Esc>'k 
 
 " copy to windows clipboard
 vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
