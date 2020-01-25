@@ -2,9 +2,6 @@ set nocp " disable backwards compatability
 
 call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-
   Plug 'vim-syntastic/syntastic'
 
   Plug 'Yggdroot/indentLine'
@@ -35,9 +32,6 @@ let g:NERDToggleCheckAllLines = 1
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_diff_args = '-w' " ignore whitespace when diffing
-
-let g:AirlineTheme = 'molokai'
-let g:airline_powerline_fonts = 1
 
 let g:indentLine_char = '┊'
 
