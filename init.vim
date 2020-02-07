@@ -1,5 +1,7 @@
 set nocp " disable backwards compatability
 
+let mapleader=','
+
 call plug#begin('~/.vim/plugged')
   Plug 'tomasr/molokai'
   Plug 'vim-syntastic/syntastic'
@@ -23,17 +25,13 @@ filetype plugin indent on
 
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_diff_args = '-w' " ignore whitespace when diffing
-
-let g:indentLine_char = '┊'
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -43,7 +41,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 set statusline+=%#warningmsg#
@@ -56,36 +54,33 @@ let g:syntastic_check_on_wq = 0
 
 "-----------------------------------------------------------------------------"
 
-let mapleader=','
+syntax enable
 
 colorscheme molokai
 set t_Co=256
 
-set relativenumber
-set number
-set colorcolumn=80
+call matchadd('ColorColumn', '\%81v', 100) " highlight 81 column
+
+set number relativenumber
 
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set smartindent
 set tabstop=2
 
 set history=999
-set clipboard=unnamedplus " remove plus is required
-set nomodeline
-
-set laststatus=2
-set cmdheight=1
 set cursorline
+set scrolloff=2
 
+set nomodeline
 set noerrorbells
 
-set showmatch
+set clipboard=unnamedplus " remove plus is required
 
-" Search
-set ignorecase
 set incsearch
 set nohlsearch
+set showmatch
+set ignorecase
 set smartcase
 
 " disable swap and backup files
@@ -93,24 +88,22 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-syntax enable
-
 set lazyredraw
 set ttyfast
 
-set scrolloff=2
+
+" open and reload vimrc
+ca vimrc tabe $MYVIMRC
+nnoremap <leader>vr :so $MYVIMRC<CR>
 
 " remove trailing whitespace on save
-autocmd BufWritePre * %s/\s+$//e
+autocmd BufWritePre * %s/\s\+$//e
+
+" copy to windows clipboard
+vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
 
 " indent lines and reselect visual group
 vnoremap > >gv
 vnoremap < <gv
 
-nnoremap <Leader>w <C-w>
-
-" faster semicolon
-nnoremap ; mkA;<Esc>'k 
-
-" copy to windows clipboard
-vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
+nnoremap ; A;<Esc>;_
