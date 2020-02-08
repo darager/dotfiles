@@ -1,25 +1,33 @@
 set nocp " disable backwards compatability
-
-let mapleader=','
+filetype off
 
 call plug#begin('~/.vim/plugged')
-  Plug 'tomasr/molokai'
-  Plug 'vim-syntastic/syntastic'
 
+  " Navigation
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'kien/ctrlp.vim'
+  Plug 'octref/RootIgnore'
+
+  " Editing
   Plug 'Yggdroot/indentLine'
   Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdcommenter'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
 
+  " Git
   Plug 'airblade/vim-gitgutter'
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'kien/ctrlp.vim'
-  Plug 'octref/RootIgnore'
+
+  " Visual
   Plug 'scrooloose/nerdtree'
+  Plug 'sheerun/vim-polyglot'
+  Plug 'tomasr/molokai'
+  Plug 'vim-syntastic/syntastic'
+
 call plug#end()
 
-filetype off
+let mapleader=','
+
 filetype plugin on
 filetype plugin indent on
 
