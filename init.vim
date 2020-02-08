@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 
   " Git
   Plug 'airblade/vim-gitgutter'
+  Plug 'jreybert/vimagit'
 
   " Visual
   Plug 'scrooloose/nerdtree'
@@ -31,7 +32,6 @@ let mapleader=','
 filetype plugin on
 filetype plugin indent on
 
-map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
@@ -60,7 +60,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-"-----------------------------------------------------------------------------"
 
 syntax enable
 
@@ -111,6 +110,12 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " copy to windows clipboard
 vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
+
+" open Magit window
+nnoremap <leader>gs :Magit<CR>
+
+" toggle nerdtree
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " indent lines and reselect visual group
 vnoremap > >gv
