@@ -59,8 +59,6 @@ syntax enable
 colorscheme molokai
 set t_Co=256
 
-call matchadd('ColorColumn', '\%81v', 100) " highlight 81 column
-
 set number relativenumber
 
 set expandtab
@@ -95,6 +93,10 @@ set ttyfast
 " open and reload vimrc
 ca vimrc tabe $MYVIMRC
 nnoremap <leader>vr :so $MYVIMRC<CR>
+
+" highlight 81 column
+call matchadd('ColorColumn', '\%81v', 100)
+highlight ColorColumn ctermfg=magenta
 
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
