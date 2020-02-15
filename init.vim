@@ -38,8 +38,6 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 let g:gitgutter_map_keys = 0
-let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_diff_args = '-w' " ignore whitespace when diffing
 
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
@@ -59,7 +57,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 
 syntax enable
 
