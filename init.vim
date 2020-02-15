@@ -43,7 +43,6 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_shortcut = '>'
 
-let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -111,6 +110,9 @@ highlight ColorColumn ctermfg=magenta
 
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" open CtrlP search
+nnoremap <C-p> :CtrlP<CR>
 
 " open Magit window
 nnoremap <leader>gs :Magit<CR>
