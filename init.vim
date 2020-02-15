@@ -96,6 +96,13 @@ set noswapfile
 set lazyredraw
 set ttyfast
 
+" enable undo function after file has been closed
+set undofile
+set undodir=/tmp
+
+" ignore some typing mistakes in ex-mode
+ca Wq wq
+ca W w
 
 " open and reload vimrc
 ca vimrc tabe $MYVIMRC
