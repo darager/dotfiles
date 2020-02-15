@@ -27,9 +27,13 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 
 # aliases
-alias g='git'
 alias mkdir='mkdir -pv'
 alias cl='clear'
+
+# git aliases
+alias g='git'
+alias gc='git commit -am'
+alias gs='git status'
 
 # ls aliases
 alias ll='ls -alF'
