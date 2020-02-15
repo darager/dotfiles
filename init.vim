@@ -71,7 +71,7 @@ set tabstop=2
 
 set history=999
 set cursorline
-set scrolloff=2
+set scrolloff=3
 
 set nomodeline
 set noerrorbells
@@ -90,19 +90,10 @@ set nowritebackup
 set noswapfile
 
 set lazyredraw
-set ttyfast
 
 " enable undo function after file has been closed
 set undofile
 set undodir=/tmp
-
-" ignore some typing mistakes in ex-mode
-ca Wq wq
-ca W w
-
-" open and reload vimrc
-ca vimrc tabe $MYVIMRC
-nnoremap <leader>vr :so $MYVIMRC<CR>
 
 " highlight 81 column
 call matchadd('ColorColumn', '\%81v', 100)
@@ -110,6 +101,17 @@ highlight ColorColumn ctermfg=magenta
 
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" ignore some typing mistakes in ex-mode
+ca W w
+ca Wq wq
+
+" open and reload vimrc
+ca vimrc tabe $MYVIMRC
+nnoremap <leader>vr :so $MYVIMRC<CR>
+
+" sort the current paragraph
+nnoremap <leader>s vip!sort<CR>
 
 " open CtrlP search
 nnoremap <C-p> :CtrlP<CR>
@@ -121,7 +123,5 @@ nnoremap <leader>gs :Magit<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 " indent lines and reselect visual group
-vnoremap > >gv
 vnoremap < <gv
-
-nnoremap ; A;<Esc>;_
+vnoremap > >gv
