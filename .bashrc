@@ -1,8 +1,8 @@
 #~/.bashrc
 
-stty -ixon # Disable ctrl-s and ctrl-q
+stty -ixon # Disable Ctrl-s and Ctrl-q
 
-# enable 256 color suppor for tmux
+# enable 256 color support
 export TERM=xterm-256color
 
 # vi mode in bash
@@ -19,16 +19,22 @@ shopt -s histappend
 # set prompt
 PS1='${debian_chroot:+($debian_chroot)}\[\033[00;36m\][\u]\[\033[00m\] \[\033[01;36m\]\w\$ \[\033[00m\]'
 
-# swap directories quicker
+# automatically swap directories when name of directory is entered
 shopt -s autocd
 
 # set colors
 alias ls='ls -hN --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 
-# aliases
-alias mkdir='mkdir -pv'
+# general aliases
 alias cl='clear'
+alias ..='cd ..'
+
+# show feedback when directory is created
+alias mkdir='mkdir -pv'
+
+# use neovim instead of vim
+alias vim='nvim'
 
 # git aliases
 alias g='git'
@@ -36,12 +42,9 @@ alias gc='git commit -am'
 alias gs='git status'
 
 # ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
 
-# set docker for windows deamon address
+# set address of docker for windows deamon
 export DOCKER_HOST=tcp://localhost:2375
-
-# use neovim instead of vim
-alias vim='nvim'
