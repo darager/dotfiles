@@ -80,7 +80,7 @@ set scrolloff=2
 set nomodeline
 set noerrorbells
 
-set clipboard=unnamedplus " remove plus is required
+set clipboard=unnamed
 
 set incsearch
 set nohlsearch
@@ -107,9 +107,6 @@ highlight ColorColumn ctermfg=magenta
 
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-" copy to windows clipboard
-vmap <C-c> :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
 
 " open Magit window
 nnoremap <leader>gs :Magit<CR>
