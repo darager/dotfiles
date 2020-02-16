@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
 
   " Editing
   Plug 'Yggdroot/indentLine'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'scrooloose/nerdcommenter'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
@@ -39,10 +38,6 @@ let g:NERDToggleCheckAllLines = 1
 
 let g:gitgutter_map_keys = 0
 
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
-let g:closetag_filetypes = 'html,xhtml,phtml'
-let g:closetag_shortcut = '>'
-
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
@@ -59,8 +54,8 @@ let g:syntastic_check_on_wq = 0
 
 syntax enable
 
-colorscheme molokai
 set t_Co=256
+colorscheme molokai
 
 set number relativenumber
 
