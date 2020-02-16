@@ -1,7 +1,8 @@
 set nocp " disable backwards compatability
 filetype off
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
+
 
   " Navigation
   Plug 'christoomey/vim-tmux-navigator'
