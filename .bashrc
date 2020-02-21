@@ -27,13 +27,18 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 
 # general aliases
-alias cl='clear'
 alias ..='cd ..'
+alias cl='clear'
+
+# tmux aliases
+alias t='tmux'
+alias ta='tmux attach'
 
 # show feedback when directory is created
 alias mkdir='mkdir -pv'
 
 # use neovim instead of vim
+alias v='nvim'
 alias vim='nvim'
 
 # git aliases
