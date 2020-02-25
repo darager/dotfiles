@@ -3,7 +3,6 @@ filetype off
 
 call plug#begin('~/.config/nvim/plugged')
 
-
   " Navigation
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'kien/ctrlp.vim'
@@ -23,18 +22,22 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'sheerun/vim-polyglot'
   Plug 'tomasr/molokai'
-  Plug 'vim-syntastic/syntastic'
+
+  " Autocompletion / Syntax
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
 let mapleader=','
 
+set t_Co=256
+colorscheme molokai
+
+syntax enable
 filetype plugin on
 filetype plugin indent on
 
 let NERDTreeShowHidden=1
-let g:NERDCompactSexyComs = 1
-let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 let g:gitgutter_map_keys = 0
@@ -44,19 +47,6 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-syntax enable
-
-set t_Co=256
-colorscheme molokai
 
 set number relativenumber
 
@@ -121,3 +111,40 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " indent lines and reselect visual group
 vnoremap < <gv
 vnoremap > >gv
+
+" COC specific settings
+" show coc status in statusline
+set statusline+=%{coc#status()}
+
+" start or refresh completion
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" list commands available
+nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
+
+" rename the current word in the cursor
+nnoremap <leader>r <Plug>(coc-rename)
+
+" format the selected code
+nnoremap <leader>f <Plug>(coc-format-selected)
+vnoremap <leader>f <Plug>(coc-format-selected)
+
+" run code action
+vnoremap <leader>ca <Plug>(coc-codeaction-selected)
+nnoremap <leader>ca <Plug>(coc-codeaction-selected)
+
+" gd - go to definition of word under cursor
+nnoremap gd <Plug>(coc-definition)
+
+" gr - find references
+nnoremap gr <Plug>(coc-references)
+
+" show documentation of thing under cursor
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
