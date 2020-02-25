@@ -50,6 +50,8 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 set number relativenumber
 
+set mouse=a
+
 set expandtab
 set shiftwidth=4
 set smartindent
