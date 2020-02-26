@@ -122,24 +122,24 @@ set statusline+=%{coc#status()}
 inoremap <silent><expr> <c-space> coc#refresh()
 
 " rename the current word in the cursor
-nnoremap <leader>r <Plug>(coc-rename)
+nmap <leader>r <Plug>(coc-rename)
 
 " format the selected code
-nnoremap <leader>f <Plug>(coc-format-selected)
-vnoremap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
+vmap <leader>f <Plug>(coc-format-selected)
 
 " run code action
-vnoremap <leader>ca <Plug>(coc-codeaction-selected)
-nnoremap <leader>ca <Plug>(coc-codeaction-selected)
+vmap <leader>ca <Plug>(coc-codeaction-selected)
+nmap <leader>ca <Plug>(coc-codeaction-selected)
 
 " gd - go to definition of word under cursor
-nnoremap gd <Plug>(coc-definition)
+nmap gd <Plug>(coc-definition)
 
 " gr - find references
-nnoremap gr <Plug>(coc-references)
+nmap gr <Plug>(coc-references)
 
 " show documentation of thing under cursor
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
