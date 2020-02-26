@@ -121,9 +121,6 @@ set statusline+=%{coc#status()}
 " start or refresh completion
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" list commands available
-nnoremap <silent> <leader>cc  :<C-u>CocList commands<cr>
-
 " rename the current word in the cursor
 nnoremap <leader>r <Plug>(coc-rename)
 
