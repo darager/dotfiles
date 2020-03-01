@@ -1,6 +1,8 @@
 set nocp " disable backwards compatability
 filetype off
 
+" this is a test
+
 call plug#begin('~/.config/nvim/plugged')
 
   " Navigation
