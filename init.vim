@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tomasr/molokai'
 
   " Autocompletion / Syntax
+  Plug 'dense-analysis/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -47,6 +48,11 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+let g:ale_open_list = 1
+let g:ale_sign_column_always = 1
+let g:ale_lsp_show_message_severity = 'error'
+let g:ale_python_pylint_options = '--errors-only'
 
 set number relativenumber
 
@@ -150,3 +156,7 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+
+" jump between errors
+nmap <silent> <leader>ee <Plug>(ale_next_wrap)
+nmap <silent> <leader>ge <Plug>(ale_previous_wrap)
