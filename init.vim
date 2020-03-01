@@ -16,7 +16,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Git
   Plug 'airblade/vim-gitgutter'
-  Plug 'jreybert/vimagit'
+  Plug 'tpope/vim-fugitive'
 
   " Visual
   Plug 'scrooloose/nerdtree'
@@ -104,11 +104,14 @@ nnoremap <leader>s vip!sort<CR>
 " open CtrlP search
 nnoremap <C-p> :CtrlP<CR>
 
-" open Magit window
-nnoremap <leader>gs :Magit<CR>
+" open fugitive window
+nnoremap <leader>gs :Gstatus<CR>
 
 " toggle nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+" faster semicolon
+nnoremap ; A;<Esc>_
 
 " indent lines and reselect visual group
 vnoremap < <gv
