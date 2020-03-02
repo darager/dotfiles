@@ -22,6 +22,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'sheerun/vim-polyglot'
   Plug 'tomasr/molokai'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
   " Autocompletion / Syntax
   Plug 'dense-analysis/ale'
@@ -53,6 +55,8 @@ let g:ale_open_list = 1
 let g:ale_sign_column_always = 1
 let g:ale_lsp_show_message_severity = 'error'
 let g:ale_python_pylint_options = '--errors-only'
+
+let g:airline_theme='hybrid'
 
 set number relativenumber
 
