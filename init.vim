@@ -127,6 +127,10 @@ nnoremap ; A;<Esc>_
 vnoremap < <gv
 vnoremap > >gv
 
+" traverse wrapped lines like any other lines
+nnoremap j gj
+nnoremap k gk
+
 " COC specific settings
 " show coc status in statusline
 set statusline+=%{coc#status()}
