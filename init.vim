@@ -21,7 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
   " Visual
   Plug 'scrooloose/nerdtree'
   Plug 'sheerun/vim-polyglot'
-  Plug 'tomasr/molokai'
+  Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
@@ -34,7 +34,7 @@ call plug#end()
 let mapleader=','
 
 set t_Co=256
-colorscheme molokai
+colorscheme gruvbox
 
 syntax enable
 filetype plugin on
