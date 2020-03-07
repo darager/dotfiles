@@ -19,9 +19,9 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
 
   " Visual
+  Plug 'morhetz/gruvbox'
   Plug 'scrooloose/nerdtree'
   Plug 'sheerun/vim-polyglot'
-  Plug 'morhetz/gruvbox'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
@@ -92,6 +92,9 @@ set lazyredraw
 " enable undo function after file has been closed
 set undofile
 set undodir=/tmp
+
+" make substitute command interactive
+set inccommand=nosplit
 
 " highlight 81 column
 call matchadd('ColorColumn', '\%81v', 100)
