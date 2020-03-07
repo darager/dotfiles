@@ -19,6 +19,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-fugitive'
 
   " Visual
+  Plug 'machakann/vim-highlightedyank'
   Plug 'morhetz/gruvbox'
   Plug 'scrooloose/nerdtree'
   Plug 'sheerun/vim-polyglot'
@@ -57,6 +58,8 @@ let g:ale_lsp_show_message_severity = 'error'
 let g:ale_python_pylint_options = '--errors-only'
 
 let g:airline_theme='hybrid'
+
+let g:highlightedyank_highlight_duration = 100
 
 set number relativenumber
 
