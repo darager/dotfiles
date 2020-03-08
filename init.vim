@@ -99,6 +99,9 @@ set undodir=/tmp
 " make substitute command interactive
 set inccommand=nosplit
 
+" autmatically resize when new pane with tmux is created
+autocmd VimResized * :wincmd =
+
 " highlight 81 column
 call matchadd('ColorColumn', '\%81v', 100)
 highlight ColorColumn ctermfg=magenta
