@@ -109,6 +109,10 @@ highlight ColorColumn ctermfg=magenta
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
 
+" remap escape
+inoremap ö <Esc>
+vnoremap ö <Esc>
+
 " ignore some typing mistakes in ex-mode
 ca W w
 ca Wq wq
