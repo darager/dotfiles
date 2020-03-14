@@ -36,6 +36,7 @@ let mapleader=','
 
 set t_Co=256
 colorscheme gruvbox
+set background=dark
 
 syntax enable
 filetype plugin on
