@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Editing
   Plug 'Yggdroot/indentLine'
+  Plug 'mattn/emmet-vim'
   Plug 'scrooloose/nerdcommenter'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
@@ -62,6 +63,8 @@ let g:airline_theme='hybrid'
 
 let g:highlightedyank_highlight_duration = 100
 
+let g:user_emmet_leader_key='<leader>'
+
 set number relativenumber
 
 set mouse=a
@@ -109,10 +112,6 @@ highlight ColorColumn ctermfg=magenta
 
 " remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-" remap escape
-inoremap ö <Esc>
-vnoremap ö <Esc>
 
 " ignore some typing mistakes in ex-mode
 ca W w
