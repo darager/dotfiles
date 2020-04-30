@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'vim-airline/vim-airline-themes'
 
   " Autocompletion / Syntax
-  Plug 'dense-analysis/ale'
+  "Plug 'dense-analysis/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
@@ -159,8 +159,11 @@ nmap <leader>f <Plug>(coc-format-selected)
 vmap <leader>f <Plug>(coc-format-selected)
 
 " run code action
+nmap <leader>ca <Plug>(coc-codeaction)
 vmap <leader>ca <Plug>(coc-codeaction-selected)
-nmap <leader>ca <Plug>(coc-codeaction-selected)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " gd - go to definition of word under cursor
 nmap gd <Plug>(coc-definition)
