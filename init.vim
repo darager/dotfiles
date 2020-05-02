@@ -1,4 +1,4 @@
-set nocp " disable backwards compatability
+set nocp " disable backwards compatibility
 filetype off
 
 call plug#begin('~/.config/nvim/plugged')
@@ -51,7 +51,7 @@ let g:gitgutter_map_keys = 0
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ale_open_list = 1
@@ -103,7 +103,7 @@ set undodir=/tmp
 " make substitute command interactive
 set inccommand=nosplit
 
-" autmatically resize when new pane with tmux is created
+" automatically resize when new pane with tmux is created
 autocmd VimResized * :wincmd =
 
 " highlight 81 column
@@ -165,10 +165,10 @@ vmap <leader>ca <Plug>(coc-codeaction-selected)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" gd - go to definition of word under cursor
+" go to definition
 nmap gd <Plug>(coc-definition)
 
-" gr - find references
+" find references
 nmap gr <Plug>(coc-references)
 
 " show documentation of thing under cursor
