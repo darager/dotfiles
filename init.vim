@@ -3,33 +3,34 @@ filetype off
 
 call plug#begin('~/.config/nvim/plugged')
 
-  " Navigation
-  Plug 'christoomey/vim-tmux-navigator'
-  Plug 'kien/ctrlp.vim'
-  Plug 'octref/RootIgnore'
+" Navigation
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'octref/RootIgnore'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-  " Editing
-  Plug 'Yggdroot/indentLine'
-  Plug 'mattn/emmet-vim'
-  Plug 'scrooloose/nerdcommenter'
-  Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
+" Editing
+Plug 'Yggdroot/indentLine'
+Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 
-  " Git
-  Plug 'airblade/vim-gitgutter'
-  Plug 'tpope/vim-fugitive'
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
-  " Visual
-  Plug 'machakann/vim-highlightedyank'
-  Plug 'morhetz/gruvbox'
-  Plug 'scrooloose/nerdtree'
-  Plug 'sheerun/vim-polyglot'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+" Visual
+Plug 'machakann/vim-highlightedyank'
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-  " Autocompletion / Syntax
-  "Plug 'dense-analysis/ale'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Autocompletion / Syntax
+"Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -47,12 +48,6 @@ let NERDTreeShowHidden=1
 let g:NERDToggleCheckAllLines = 1
 
 let g:gitgutter_map_keys = 0
-
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 let g:ale_open_list = 1
 let g:ale_sign_column_always = 1
@@ -124,8 +119,8 @@ nnoremap <leader>vr :so $MYVIMRC<CR>
 " sort the current paragraph
 nnoremap <leader>s vip!sort<CR>
 
-" open CtrlP search
-nnoremap <C-p> :CtrlP<CR>
+" open FZF search
+nnoremap <C-p> :GFiles<CR>
 
 " open fugitive window
 nnoremap <leader>gs :Gstatus<CR>
