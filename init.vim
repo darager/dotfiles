@@ -5,9 +5,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Navigation
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'octref/RootIgnore'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'octref/RootIgnore'
 
 " Editing
 Plug 'Yggdroot/indentLine'
@@ -120,7 +120,16 @@ nnoremap <leader>vr :so $MYVIMRC<CR>
 nnoremap <leader>s vip!sort<CR>
 
 " open FZF search
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-p> :call <SID>search_files()<CR>
+function! s:search_files()
+    " at least it works
+    let isRepo = len(system("git status")) >= 70
+    if(isRepo)
+        :GFiles
+    else
+        :Files
+    endif
+endfunction
 
 " open fugitive window
 nnoremap <leader>gs :Gstatus<CR>
