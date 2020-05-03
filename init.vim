@@ -61,35 +61,28 @@ let g:highlightedyank_highlight_duration = 100
 let g:user_emmet_leader_key='<leader>'
 
 set number relativenumber
-
 set mouse=a
-
 set expandtab
 set shiftwidth=4
 set smartindent
 set tabstop=2
-
 set history=999
 set cursorline
 set scrolloff=3
-
 set nomodeline
 set noerrorbells
-
 set clipboard=unnamed
-
 set incsearch
 set nohlsearch
 set showmatch
 set ignorecase
 set smartcase
+set lazyredraw
 
 " disable swap and backup files
 set nobackup
 set nowritebackup
 set noswapfile
-
-set lazyredraw
 
 " enable undo function after file has been closed
 set undofile
