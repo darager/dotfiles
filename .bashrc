@@ -52,4 +52,4 @@ alias la='ls -A'
 alias ll='ls -alF'
 
 # set address of docker for windows deamon
-export DOCKER_HOST=tcp://localhost:2375
+export DOCKER_BUILDKIT=1
