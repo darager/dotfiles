@@ -130,9 +130,6 @@ nnoremap <leader>gs :Gstatus<CR>
 " toggle nerdtree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-" faster semicolon
-nnoremap ; A;<Esc>_
-
 " indent lines and reselect visual group
 vnoremap < <gv
 vnoremap > >gv
