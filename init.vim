@@ -34,7 +34,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-let mapleader=','
+let mapleader=' '
 
 set t_Co=256
 colorscheme gruvbox
