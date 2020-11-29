@@ -32,6 +32,9 @@ Plug 'vim-airline/vim-airline-themes'
 "Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Brave Integration
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
+
 call plug#end()
 
 let mapleader=','
