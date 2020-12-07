@@ -16,17 +16,20 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
-" Git
+" Git integration
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" Visual
+" Visuals
 Plug 'machakann/vim-highlightedyank'
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" Color Schemes
+Plug 'morhetz/gruvbox'
+Plug 'duhduhdan/vim-nordan'
 
 " Autocompletion / Syntax
 "Plug 'dense-analysis/ale'
@@ -40,7 +43,7 @@ call plug#end()
 let mapleader=','
 
 set t_Co=256
-colorscheme gruvbox
+colorscheme nordan
 set background=dark
 
 syntax enable
@@ -57,7 +60,7 @@ let g:ale_sign_column_always = 1
 let g:ale_lsp_show_message_severity = 'error'
 let g:ale_python_pylint_options = '--errors-only'
 
-let g:airline_theme='hybrid'
+let g:airline_theme='bubblegum'
 
 let g:highlightedyank_highlight_duration = 100
 
