@@ -73,7 +73,6 @@ set shiftwidth=4
 set smartindent
 set tabstop=2
 set history=999
-set cursorline
 set scrolloff=3
 set nomodeline
 set noerrorbells
@@ -81,8 +80,7 @@ set clipboard=unnamed
 set incsearch
 set nohlsearch
 set showmatch
-set ignorecase
-set smartcase
+set ignorecase smartcase
 set lazyredraw
 
 " disable swap and backup files
@@ -118,17 +116,9 @@ nnoremap <leader>vr :so $MYVIMRC<CR>
 " sort the current paragraph
 nnoremap <leader>s vip!sort<CR>
 
-" open FZF search
-nnoremap <C-p> :call <SID>search_files()<CR>
-function! s:search_files()
-    " at least it works
-    let isRepo = len(system("git status")) >= 70
-    if(isRepo)
-        :GFiles
-    else
-        :Files
-    endif
-endfunction
+" if in git repo open staged/committed/unstaged
+" else show regular files.
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 
 " open fugitive window
 nnoremap <leader>gs :Gstatus<CR>
