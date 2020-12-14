@@ -66,7 +66,13 @@ let g:highlightedyank_highlight_duration = 100
 
 let g:user_emmet_leader_key='<leader>'
 
-set number relativenumber
+set number
+augroup Numbering
+    autocmd!
+    autocmd InsertEnter * set norelativenumber
+    autocmd InsertLeave * set relativenumber
+augroup END
+
 set mouse=a
 set expandtab
 set shiftwidth=4
