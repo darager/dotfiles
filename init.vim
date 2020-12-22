@@ -30,6 +30,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Color Schemes
 Plug 'morhetz/gruvbox'
 Plug 'duhduhdan/vim-nordan'
+Plug 'joshdick/onedark.vim'
 
 " Autocompletion / Syntax
 "Plug 'dense-analysis/ale'
@@ -43,7 +44,7 @@ call plug#end()
 let mapleader=','
 
 set t_Co=256
-colorscheme nordan
+colorscheme onedark
 set background=dark
 
 syntax enable
