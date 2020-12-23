@@ -2,43 +2,41 @@ set nocp " disable backwards compatibility
 filetype off
 
 call plug#begin('~/.config/nvim/plugged')
+    " Navigation
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    Plug 'octref/RootIgnore'
 
-" Navigation
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'octref/RootIgnore'
+    " Editing
+    Plug 'Yggdroot/indentLine'
+    Plug 'mattn/emmet-vim'
+    Plug 'scrooloose/nerdcommenter'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-surround'
 
-" Editing
-Plug 'Yggdroot/indentLine'
-Plug 'mattn/emmet-vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+    " Git integration
+    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
 
-" Git integration
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+    " Visuals
+    Plug 'machakann/vim-highlightedyank'
+    Plug 'scrooloose/nerdtree'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
-" Visuals
-Plug 'machakann/vim-highlightedyank'
-Plug 'scrooloose/nerdtree'
-Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+    " Color Schemes
+    Plug 'morhetz/gruvbox'
+    Plug 'duhduhdan/vim-nordan'
+    Plug 'joshdick/onedark.vim'
 
-" Color Schemes
-Plug 'morhetz/gruvbox'
-Plug 'duhduhdan/vim-nordan'
-Plug 'joshdick/onedark.vim'
+    " Autocompletion / Syntax
+    "Plug 'dense-analysis/ale'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Autocompletion / Syntax
-"Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Brave Integration
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
-
+    " Browser Integration
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
 call plug#end()
 
 let mapleader=','
@@ -168,7 +166,7 @@ nmap gd <Plug>(coc-definition)
 " find references
 nmap gr <Plug>(coc-references)
 
-" show documentation of thing under cursor
+" show documentation of element under cursor
 nmap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
     if (index(['vim','help'], &filetype) >= 0)
