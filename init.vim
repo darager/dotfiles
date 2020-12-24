@@ -6,7 +6,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'christoomey/vim-tmux-navigator'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'octref/RootIgnore'
 
     " Editing
     Plug 'Yggdroot/indentLine'
