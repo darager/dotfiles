@@ -20,6 +20,7 @@ call plug#begin('~/.config/nvim/plugged')
     " Git integration
     Plug 'airblade/vim-gitgutter'
     Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
 
     " Visuals
     Plug 'machakann/vim-highlightedyank'
@@ -76,7 +77,7 @@ augroup END
 
 set mouse=a
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set smartindent
 set tabstop=2
 set history=999
